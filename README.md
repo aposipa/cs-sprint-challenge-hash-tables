@@ -39,16 +39,18 @@ Collisions occur when 2 different keys hash to the same number. The idea of the 
 
 Hashtable operations should ideally be O(1), or constant time. In a table with a lot of collisions, it will take additional time. In a worst-case scenario, where all of the keys have collided at a single index, it could be linear time O(n).
 
+The hashing function itself will be linear, O(n) since it is looping over each character, but since the number of letters in a key is not the same as the number of inputs (which is what we are measuring with big O notation), it can be ignored in most circumstances.
+
 4. Load factor
 
 
-The load factor is a measure of how full the hashtable is. How many things are currently being stored in the hashtable divided by its capacity. Although, theoretically with a linked list implementation, capacity is limitless, the more things that are stored in the table without increasing capacity increases the probability of collisions and a less efficient hashtable.
+The load factor is a measure of how full the hashtable is. How many things are currently being stored in the hashtable divided by its capacity. Although, theoretically with a linked list implementation, capacity is limitless, the more things that are stored in the table without increasing capacity increases the probability of collisions and creates a less efficient hashtable.
 
 
 5. Automatic resizing
 
 
-Automatic resizing takes into account the current load factor and doubles (or even halves) the size of the hashtable when it reaches a predetermined threshold. A resizing method must also then replace all the values in the newly sized tables. Since hashing funtions take into account the remainder of the division of the calculated value and the length of the table, changing the size of the hashtable will change some hashes. This is good since it means less collisions, but it also means a resizing function will need to take care to replace every value in a newly calculated position.
+Automatic resizing takes into account the current load factor and doubles (or even halves) the size of the hashtable when it reaches a predetermined threshold. A resizing method must also then replace all the values in the newly sized table. Since hashing funtions take into account the remainder of the division of the calculated hash and the length of the table, changing the size of the hashtable will change some hashes. This is good since it means less collisions, but it also means a resizing function will need to take care to replace every value in a newly calculated position.
 
 
 6. Various use cases for hash tables
