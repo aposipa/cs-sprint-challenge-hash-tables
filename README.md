@@ -23,11 +23,40 @@ Commit your code regularly and meaningfully. This practice helps both you (in ca
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your answers beforehand.
 
 1. Hashing functions
+
+```
+Hashing functions allow us to convert a string key into number, with predictable output. For example, if 'blue' hashes to the number 3, it should always hash to the number 3 every time, so that we know where it should be placed.
+```
+
 2. Collision resolution
+
+```
+Collisions occur when 2 different keys hash to the same number. The idea of the hashtable is that each key cooresponds to a unique value, so when collisions occur they must be resolved somehow. One way to do this is with a linked list. Instead of a single entry, each entry in the hashtable is a node in a linked list. If a collision occurs, we can simply chain it onto the head of the list
+```
+
 3. Performance of basic hash table operations
+
+```
+Hashtable operations should ideally be O(1), or constant time. In a table with a lot of collisions, it will take additional time. In a worst-case scenario, where all of the keys have collided at a single index, it could be linear time O(n).
+```
+
 4. Load factor
+
+```
+The load factor is a measure of how full the hashtable is. How many things are currently being stored in the hashtable divided by its capacity. Although, theoretically with a linked list implementation, capacity is limitless, the more things that are stored in the table without increasing capacity increases the probability of collisions and a less efficient hashtable.
+```
+
 5. Automatic resizing
+
+```
+Automatic resizing takes into account the current load factor and doubles (or even halves) the size of the hashtable when it reaches a predetermined threshold. A resizing method must also then replace all the values in the newly sized tables. Since hashing funtions take into account the remainder of the division of the calculated value and the length of the table, changing the size of the hashtable will change some hashes. This is good since it means less collisions, but it also means a resizing function will need to take care to replace every value in a newly calculated position.
+```
+
 6. Various use cases for hash tables
+
+```
+Hashtables have a large variety of applications. They are useful to store associations between things (perhaps a cipher) rather than just a jumbled list like an array. They can also save time in looping/recursive functions which may need to compute the same values repeatedly. Store them once, then you need only reference the answer after that. Hashtables can also be used to hold frequency data, how often a word or number appears in a given data set.
+```
 
 We expect you to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
