@@ -1,8 +1,18 @@
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    #input and output will be an array of numbers
+    num_dict = {}
+
+    for num in a:
+        if num not in num_dict:
+            num_dict[num] = None
+        if (num * -1) in num_dict:
+            num_dict[num*-1] = num
+            num_dict[num] = num *-1
+
+    result = []
+    for num in num_dict:
+        if num > 0 and num_dict[num] is not None:
+            result.append(num)
 
     return result
 
